@@ -1,0 +1,26 @@
+.hand {
+    border: 1px solid blue;
+    width: 200px;
+    height: 50px;
+}
+
+.handsep {
+    clear: both;
+}
+.card {
+    float: left;
+    border: 1px solid green;
+    width: 30px;
+    height: 40px;
+    margin: 2px;
+}
+
+.red {
+    border: 2px solid red;
+    color: red;
+}
+
+.black {
+    border: 2px solid black;
+    color: black;
+}

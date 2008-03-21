@@ -1,0 +1,57 @@
+<h1>Experiment#newhand</h1>
+<p><%= @hand.join(",") %></p>
+
+<div class="given">
+<% @hand.each_with_index do |card, idx| 
+  value, suit = /(.)(.)/.match(card)[1,2]
+  color = /s|c/.match(suit) ? "black" : "red"
+  suit_sym = case suit
+  when "s": "&#x2660;"
+  when "h": "&#x2665;"
+  when "d": "&#x2666;"
+  when "c": "&#x2663;"
+  else      "n"
+  end
+%>
+  <div class="card <%= color %>" id="card<%= idx%>"><%= value %><%= suit_sym %></div>
+<% end %>
+</div>
+
+<script type="text/javascript">
+(function() {
+  var Dom = YAHOO.util.Dom;
+  var Event = YAHOO.util.Event;
+  var DDM = YAHOO.util.DragDropMgr;
+  
+  YAHOO.example.DDApp = {
+    init: function() {
+      var cards = 13;
+      var i;
+      for (i = 0; i < cards; i = i+1) {
+        new YAHOO.util.DD("card"+i);
+      }
+      var t0 = new YAHOO.util.DDTarget("front");
+      var t1 = new YAHOO.util.DDTarget("middle");
+      var t2 = new YAHOO.util.DDTarget("back");
+      
+      Dom.get("status").innerHTML = "nalle";
+    }
+  };
+  
+  Event.onDOMReady(YAHOO.example.DDApp.init, YAHOO.example.DDApp, true);
+})();
+</script>
+
+<hr class="handsep"/>
+
+<h1>Front</h1>
+<div id="front" class="hand"></div>
+
+<h1>Middle</h1>
+<div id="middle" class="hand"></div>
+
+<h1>Back</h1>
+<div id="back" class="hand"></div>
+
+<h2>Status</h2>
+<div id="status"/>

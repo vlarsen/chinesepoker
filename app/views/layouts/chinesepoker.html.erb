@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Chinese Poker: <%= controller.controller_name %> >> <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'yui/reset-fonts-grids/reset-fonts-grids', :media => "all" %>
+  <%= stylesheet_link_tag 'yui/base/base', :media => "all" %>
+  <%= stylesheet_link_tag 'chinesepoker', :media => "all" %>
+  <%= javascript_include_tag 'yui/yahoo-dom-event/yahoo-dom-event', 'yui/dragdrop/dragdrop' %>
+</head>
+<body>
+  <div id="doc">
+
+    <div id="hd">
+      <div class="menu">
+  <span>nalle</span> | 
+  <span>xyzzy</span> | 
+  <span>foobar</span>
+  <span class="logo">ChinesePoker '08</span>
+      </div>
+
+      <div class="crumbs">
+  <span><%= controller.controller_name %></span> &gt;&gt;
+  <span><%= controller.action_name %></span>
+      </div>
+      <p style="color: green"><%= flash[:notice] %></p>
+    </div> <!-- #hd -->
+
+    <div id="bd">
+<%= yield  %>
+    </div> <!-- #bd -->
+
+    <div id="ft">
+      <hr/>
+      <p>GyPoker Chinese<br/>
+        For more info, join <code>gypoker@groups.yahoo.com</code></p>
+    </div> <!-- #ft -->
+
+  </div> <!-- #doc -->
+</body>
+</html>
