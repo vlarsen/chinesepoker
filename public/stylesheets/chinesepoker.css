@@ -7,8 +7,10 @@
 .handsep {
     clear: both;
 }
+
 .card {
     float: left;
+    background: white;
     border: 1px solid green;
     width: 30px;
     height: 40px;
