@@ -1,5 +1,8 @@
 == Chinese Poker
-This is a Ruby on Rails app implementing a chinese poker game for Facebook.
+This is a Ruby on Rails app implementing a chinese poker game. User accounts
+are authenticated with OpenID. It is also possible to embed the app as
+a Facebook app, or using OpenSocial.
+
 You create a match inviting one to three other friends. Each player is notified
 about the match, and allowed to set his hand. When all players have finished
 setting their hands, the match is scored. Scores are accumulated across
